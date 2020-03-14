@@ -1,0 +1,11 @@
+{
+    "homepage": "http://www.portablesoft.org/cajviewer-lite/",
+    "version": "7.2",
+    "url": "https://cdn.jsdelivr.net/gh/Apocalypsor/My-Scoop-Bucket/files/CAJViewerLite.zip",
+    "shortcuts": [
+        [
+            "CAJVieweru.exe",
+            "CAJViewer"
+        ]
+    ]
+}
