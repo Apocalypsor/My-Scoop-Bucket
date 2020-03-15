@@ -17,7 +17,6 @@
         }
     },
     "persist": [
-        "Bandizip.ini",
         "config.ini",
         "bdzshl.x64.dll"
     ],
