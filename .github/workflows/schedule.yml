@@ -1,9 +1,10 @@
 on:
-  schedule:
-    - cron: '0 * * * *'
   push:
     branches:
       - master
+  schedule:
+    - cron: 0 * * * *
+
 name: Excavator
 jobs:
   excavate:
@@ -14,6 +15,6 @@ jobs:
     - name: Excavate
       uses: Ash258/Scoop-GithubActions@stable
       env:
-        GITH_EMAIL: action@github.com
+        GITH_EMAIL: 37431235+Apocalypsor@users.noreply.github.com
         GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
         SKIP_UPDATED: '1'
