@@ -18,13 +18,13 @@
     },
     "persist": [
         "config.ini",
-        "bdzshl.x64.dll"
+        "bdzshl64.dll"
     ],
     "pre_install": [
         "Get-ChildItem \"$dir\\Bandizip*.exe\" | Rename-Item -NewName \"$dir\\Bandizip.exe\"",
         "If(!(Test-Path \"$dir\\Bandizip.ini\")) { Set-Content \"$dir\\Bandizip.ini\" -Value $null }",
         "If(!(Test-Path \"$persist_dir\\bdzshl.x64.dll\")){",
-        "Invoke-WebRequest -Uri \"https://cdn.jsdelivr.net/gh/Apocalypsor/My-Scoop-Bucket/files/Bandizip/bdzshl.x64.dll\" -OutFile \"$dir\\bdzshl.x64.dll\" | Out-Null }"
+        "Invoke-WebRequest -Uri \"https://cdn.jsdelivr.net/gh/Apocalypsor/My-Scoop-Bucket/files/Bandizip/bdzshl.x64.dll\" -OutFile \"$dir\\bdzshl64.dll\" | Out-Null }"
     ],
     "bin": "Bandizip.exe",
     "shortcuts": [
