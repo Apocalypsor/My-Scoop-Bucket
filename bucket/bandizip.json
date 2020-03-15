@@ -26,7 +26,7 @@
         "If(!(Test-Path \"$dir\\Bandizip.ini\")) { Set-Content \"$dir\\Bandizip.ini\" -Value $null }",
         "If(!(Test-Path \"$persist_dir\\bdzshl.x64.dll\")){",
         "$Client = New-Object System.Net.WebClient",
-        "$Client.DownloadFile('https://cdn.jsdelivr.net/gh/Apocalypsor/My-Scoop-Bucket/files/Bandizip/bdzshl.x64.dll', '$dir\\bdzshl.x64.dll')"
+        "$Client.DownloadFile('https://cdn.jsdelivr.net/gh/Apocalypsor/My-Scoop-Bucket/files/Bandizip/bdzshl.x64.dll', '$dir\\bdzshl.x64.dll')",
         "$Client.DownloadFile('https://cdn.jsdelivr.net/gh/Apocalypsor/My-Scoop-Bucket/files/Bandizip/RegDll.x64.exe', '$dir\\RegDll.x64.exe')}"
     ],
     "bin": "Bandizip.exe",
