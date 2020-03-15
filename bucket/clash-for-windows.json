@@ -1,0 +1,32 @@
+{
+    "homepage": "https://github.com/Fndroid/clash_for_windows_pkg",
+    "description": "A Windows GUI based on Clash",
+    "version": "0.9.1",
+    "license": "MIT",
+    "url": "https://github.com/Fndroid/clash_for_windows_pkg/releases/download/0.9.1/Clash.for.Windows-0.9.1-win.7z",
+    "hash": "8b1abd675787666348b60e3baf95448a6e2760e65912b2a9e589ff2403df2d39",
+    "shortcuts": [
+        [
+            "Clash for Windows.exe",
+            "Clash for Windows"
+        ]
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "url": "https://github.com/Fndroid/clash_for_windows_pkg/releases/download/$version/Clash.for.Windows-$version-win.7z",
+        "hash": {
+            "url": "https://github.com/Fndroid/clash_for_windows_pkg/releases/download/$version/sha256sum",
+            "mode": "extract",
+            "regex": "7z: $sha256"
+        }
+    },
+    "pre_install": [
+        "if (!(Test-Path \"$persist_dir\\config.yaml\")) {",
+        "    (New-Item -Force -Type \"file\" -Path \"$dir\\resources\\static\\files\\config.yaml\") | Out-Null",
+        "}"
+    ],
+    "persist": [
+        ["resources\\static\\files\\config.yaml", "config.yaml"],
+        ["resources\\static\\files\\profiles", "profiles"]
+    ]
+}
