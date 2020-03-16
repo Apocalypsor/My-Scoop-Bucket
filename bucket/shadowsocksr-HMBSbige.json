@@ -12,6 +12,13 @@
             "hash": "A9A34C16A8C5BB41259E4317E399050093A6FA421DD6F4AD6C3DFEC26905FE5D"
         }
     },
+    "pre_install": [
+        "if (!(Test-Path \"$persist_dir\\gui-config.json\")) {",
+        "   (New-Item -Force -Type \"file\" -Path \"$dir\\gui-config.json\") | Out-Null",
+        "   (New-Item -Force -Type \"file\" -Path \"$dir\\user-rule.txt\") | Out-Null",
+        "   (New-Item -Force -Type \"file\" -Path \"$dir\\pac.txt\") | Out-Null",
+        "}"
+    ],
     "persist": [
         "gui-config.json",
         "user-rule.txt",
