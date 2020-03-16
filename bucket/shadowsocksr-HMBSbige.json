@@ -4,11 +4,11 @@
     "version": "5.1.8.5",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/HMBSbige/ShadowsocksR-Windows/releases/download/5.1.8.5/ShadowsocksR-Portable-Win64-5.1.8.5.zip",
+            "url": "https://github.com/HMBSbige/ShadowsocksR-Windows/releases/download/5.1.8.5/ShadowsocksR-Portable-Win64-5.1.8.5.zip#/dl.zip",
             "hash": "B43B9036928A204357540AE37E3EC427BB5DAFDB646020F43859966180188CD3"
         },
         "32bit": {
-            "url": "https://github.com/HMBSbige/ShadowsocksR-Windows/releases/download/5.1.8.5/ShadowsocksR-Portable-Win32-5.1.8.5.zip",
+            "url": "https://github.com/HMBSbige/ShadowsocksR-Windows/releases/download/5.1.8.5/ShadowsocksR-Portable-Win32-5.1.8.5.zip#/dl.zip",
             "hash": "A9A34C16A8C5BB41259E4317E399050093A6FA421DD6F4AD6C3DFEC26905FE5D"
         }
     },
@@ -34,7 +34,7 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/HMBSbige/ShadowsocksR-Windows/releases/download/$version/ShadowsocksR-Portable-Win64-$version.zip",
+                "url": "https://github.com/HMBSbige/ShadowsocksR-Windows/releases/download/$version/ShadowsocksR-Portable-Win64-$version.zip#/dl.zip",
                 "hash": {
                     "url": "https://github.com/NetchX/Netch/releases/tag/$version",
                     "mode": "extract",
@@ -42,7 +42,7 @@
                 }
             },
             "32bit": {
-                "url": "https://github.com/HMBSbige/ShadowsocksR-Windows/releases/download/$version/ShadowsocksR-Portable-Win32-$version.zip",
+                "url": "https://github.com/HMBSbige/ShadowsocksR-Windows/releases/download/$version/ShadowsocksR-Portable-Win32-$version.zip#/dl.zip",
                 "hash": {
                     "url": "https://github.com/NetchX/Netch/releases/tag/$version",
                     "mode": "extract",
