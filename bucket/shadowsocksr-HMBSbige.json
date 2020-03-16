@@ -14,9 +14,9 @@
     },
     "pre_install": [
         "if (!(Test-Path \"$persist_dir\\gui-config.json\")) {",
-        "   (New-Item -Force -Type \"file\" -Path \"$dir\\gui-config.json\") | Out-Null",
-        "   (New-Item -Force -Type \"file\" -Path \"$dir\\user-rule.txt\") | Out-Null",
-        "   (New-Item -Force -Type \"file\" -Path \"$dir\\pac.txt\") | Out-Null",
+        "   (New-Item -Force -ItemType \"file\" -Path \"$dir\\gui-config.json\") | Out-Null",
+        "   (New-Item -Force -ItemType \"file\" -Path \"$dir\\user-rule.txt\") | Out-Null",
+        "   (New-Item -Force -ItemType \"file\" -Path \"$dir\\pac.txt\") | Out-Null",
         "}"
     ],
     "persist": [
