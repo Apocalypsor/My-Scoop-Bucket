@@ -1,0 +1,17 @@
+{
+    "homepage": "https://github.com/HMBSbige/NatTypeTester",
+    "version": "2.2",
+    "license": "MIT",
+    "url": "https://github.com/HMBSbige/NatTypeTester/releases/download/2.2/NatTypeTester.7z",
+    "shortcuts": [
+        [
+            "NatTypeTester.exe",
+            "Nat Type Tester"
+        ]
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "url": "https://github.com/HMBSbige/NatTypeTester/releases/download/$version/NatTypeTester.7z",
+    },
+    "persist": "stun.txt"
+}
