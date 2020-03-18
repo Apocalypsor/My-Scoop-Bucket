@@ -11,7 +11,7 @@
     ],
     "checkver": "github",
     "autoupdate": {
-        "url": "https://github.com/HMBSbige/NatTypeTester/releases/download/$version/NatTypeTester.7z",
+        "url": "https://github.com/HMBSbige/NatTypeTester/releases/download/$version/NatTypeTester.7z"
     },
     "persist": "stun.txt"
 }
