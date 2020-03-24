@@ -4,15 +4,17 @@
     "license": "GPL-3.0",
     "version": "7.23",
     "url": "https://github.com/tonikelope/megabasterd/releases/download/v7.23/MegaBasterdWindowsPortable_7.23.zip",
-    "post_install": [
-        "$Files = Get-ChildItem -Path \"$dir\\*.exe\" | Out-Null",
-		"$File = $Files[0]",
-		"$Name = $File.name",
-		"$Ext = $File.extension",
-		"$Parts = $Name -split '_'",
-		"$Newname = $Parts[0] + $Ext",
-		"Rename-Item -Path $Name -NewName $Newname"
-    ],
+    "installer": {
+        "script": [
+            "$Files = Get-ChildItem -Path \"$dir\\*.exe\" | Out-Null",
+			"$File = $Files[0]",
+			"$Name = $File.name",
+			"$Ext = $File.extension",
+			"$Parts = $Name -split '_'",
+			"$Newname = $Parts[0] + $Ext",
+			"Rename-Item -Path $Name -NewName $Newname"
+        ]
+    },
     "shortcuts": [
         [
             "MegaBasterdJRE.exe",
