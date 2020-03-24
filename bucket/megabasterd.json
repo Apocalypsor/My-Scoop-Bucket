@@ -6,18 +6,12 @@
     "url": "https://github.com/tonikelope/megabasterd/releases/download/v7.23/MegaBasterdWindowsPortable_7.23.zip",
     "installer": {
         "script": [
-            "$Files = Get-ChildItem -Path \"$dir\\*.exe\" | Out-Null",
-			"$File = $Files[0]",
-			"$Name = $File.name",
-			"$Ext = $File.extension",
-			"$Parts = $Name -split '_'",
-			"$Newname = $Parts[0] + $Ext",
-			"Rename-Item -Path $Name -NewName $Newname"
+            "Get-ChildItem \"$dir\\MegaBasterdJRE_*.exe\" | Rename-Item -NewName \"$dir\\MegaBasterd.exe\" | Out-Null"
         ]
     },
     "shortcuts": [
         [
-            "MegaBasterdJRE.exe",
+            "MegaBasterd.exe",
             "MegaBasterd"
         ]
     ],
