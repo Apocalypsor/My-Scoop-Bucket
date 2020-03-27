@@ -4,7 +4,6 @@
     "version": "0.9.3",
     "license": "MIT",
     "url": "https://github.com/Fndroid/clash_for_windows_pkg/releases/download/0.9.3/Clash.for.Windows-0.9.3-win.7z",
-    "hash": "8bab9fd169cd038f7d5ca96189a01e9a5289fa41fefe8fc58748c1fc2912a7ba",
     "shortcuts": [
         [
             "Clash for Windows.exe",
@@ -14,11 +13,6 @@
     "checkver": "github",
     "autoupdate": {
         "url": "https://github.com/Fndroid/clash_for_windows_pkg/releases/download/$version/Clash.for.Windows-$version-win.7z",
-        "hash": {
-            "url": "https://github.com/Fndroid/clash_for_windows_pkg/releases/download/$version/sha256sum",
-            "mode": "extract",
-            "regex": "7z: $sha256"
-        }
     },
     "pre_install": [
         "if (!(Test-Path \"$persist_dir\\config.yaml\")) {",
