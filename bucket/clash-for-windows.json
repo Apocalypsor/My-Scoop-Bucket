@@ -12,7 +12,7 @@
     ],
     "checkver": "github",
     "autoupdate": {
-        "url": "https://github.com/Fndroid/clash_for_windows_pkg/releases/download/$version/Clash.for.Windows-$version-win.7z",
+        "url": "https://github.com/Fndroid/clash_for_windows_pkg/releases/download/$version/Clash.for.Windows-$version-win.7z"
     },
     "pre_install": [
         "if (!(Test-Path \"$persist_dir\\config.yaml\")) {",
