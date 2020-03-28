@@ -1,15 +1,15 @@
 {
     "homepage": "https://github.com/HMBSbige/ShadowsocksR-Windows/",
     "license": "GPL-3.0",
-    "version": "5.1.8.5",
+    "version": "5.1.8.6",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/HMBSbige/ShadowsocksR-Windows/releases/download/5.1.8.5/ShadowsocksR-Portable-Win64-5.1.8.5.zip#/dl.7z",
-            "hash": "B43B9036928A204357540AE37E3EC427BB5DAFDB646020F43859966180188CD3"
+            "url": "https://github.com/HMBSbige/ShadowsocksR-Windows/releases/download/5.1.8.6/ShadowsocksR-Portable-Win64-5.1.8.6.zip#/dl.7z",
+            "hash": "4943d8acbb0fb33a363ded7d68277a92455350e153ec8d4afc27d3113879c70a"
         },
         "32bit": {
-            "url": "https://github.com/HMBSbige/ShadowsocksR-Windows/releases/download/5.1.8.5/ShadowsocksR-Portable-Win32-5.1.8.5.zip#/dl.7z",
-            "hash": "A9A34C16A8C5BB41259E4317E399050093A6FA421DD6F4AD6C3DFEC26905FE5D"
+            "url": "https://github.com/HMBSbige/ShadowsocksR-Windows/releases/download/5.1.8.6/ShadowsocksR-Portable-Win32-5.1.8.6.zip#/dl.7z",
+            "hash": "4595e5cefaf0755373e737434788a5a50c6d9d9621553f727973e4e6f339c5f7"
         }
     },
     "pre_install": [
@@ -38,7 +38,10 @@
                 "hash": {
                     "url": "https://github.com/NetchX/Netch/releases/tag/$version",
                     "mode": "extract",
-                    "regex": "Win64.*\n.*?$sha256"
+                    "regex": [
+                        "Win64.*",
+                        ".*?$sha256"
+                    ]
                 }
             },
             "32bit": {
@@ -46,7 +49,10 @@
                 "hash": {
                     "url": "https://github.com/NetchX/Netch/releases/tag/$version",
                     "mode": "extract",
-                    "regex": "Win32.*\n.*?$sha256"
+                    "regex": [
+                        "Win32.*",
+                        ".*?$sha256"
+                    ]
                 }
             }
         }
