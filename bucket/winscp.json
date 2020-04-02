@@ -12,10 +12,9 @@
         "        'RandomSeedFile=.\\winscp.rnd'",
         "    ) | Add-Content -Path \"$dir\\winscp.ini\" -Encoding ASCII -Force",
         "}",
-        "If(!(Test-Path \"$persist_dir\\WinSCP.chs\")){",
-        "Invoke-WebRequest -Uri \"https://winscp.net/translations/dll/5.17.2/chs.zip\" -OutFile \"$dir\\chs.zip\" | Out-Null",
+        "Invoke-WebRequest -Uri \"https://winscp.net/translations/dll/$version/chs.zip\" -OutFile \"$dir\\chs.zip\" | Out-Null",
         "Expand-Archive -Force -Path \"$dir\\chs.zip\" -DestinationPath \"$dir\" | Out-Null",
-        "Remove-Item \"$dir\\chs.zip\" | Out-Null}"
+        "Remove-Item \"$dir\\chs.zip\" | Out-Null"
     ],
     "bin": "WinSCP.exe",
     "shortcuts": [
@@ -25,8 +24,7 @@
         ]
     ],
     "persist": [
-        "winscp.ini",
-        "WinSCP.chs"
+        "winscp.ini"
     ],
     "checkver": {
         "url": "https://winscp.net/eng/downloads.php",
