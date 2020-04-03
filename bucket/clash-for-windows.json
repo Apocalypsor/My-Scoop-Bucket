@@ -1,9 +1,10 @@
 {
     "homepage": "https://github.com/Fndroid/clash_for_windows_pkg",
     "description": "A Windows GUI based on Clash",
-    "version": "0.9.3",
+    "version": "0.9.4",
     "license": "MIT",
     "url": "https://github.com/Fndroid/clash_for_windows_pkg/releases/download/0.9.3/Clash.for.Windows-0.9.3-win.7z",
+    "hash": "3edf472387f41ffde65bf64cff06e849ed9f2f1b3ed3c8670b32bd2abfa5a973",
     "shortcuts": [
         [
             "Clash for Windows.exe",
@@ -12,7 +13,12 @@
     ],
     "checkver": "github",
     "autoupdate": {
-        "url": "https://github.com/Fndroid/clash_for_windows_pkg/releases/download/$version/Clash.for.Windows-$version-win.7z"
+        "url": "https://github.com/Fndroid/clash_for_windows_pkg/releases/download/$version/Clash.for.Windows-$version-win.7z",
+        "hash": {
+            "url": "https://github.com/Fndroid/clash_for_windows_pkg/releases/download/$version/sha256sum",
+            "mode": "extract",
+            "regex": "7z: $sha256"
+        }
     },
     "pre_install": [
         "if (!(Test-Path \"$persist_dir\\config.yaml\")) {",
