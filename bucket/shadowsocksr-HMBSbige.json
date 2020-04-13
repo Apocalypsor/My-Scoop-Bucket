@@ -36,23 +36,17 @@
             "64bit": {
                 "url": "https://github.com/HMBSbige/ShadowsocksR-Windows/releases/download/$version/ShadowsocksR-Portable-Win64-$version.zip#/dl.7z",
                 "hash": {
-                    "url": "https://github.com/NetchX/Netch/releases/tag/$version",
+                    "url": "https://github.com/HMBSbige/ShadowsocksR-Windows/releases/tag/$version",
                     "mode": "extract",
-                    "regex": [
-                        "Win64.*",
-                        ".*?$sha256"
-                    ]
+                    "regex": "Win64.*\n.*$sha256"
                 }
             },
             "32bit": {
                 "url": "https://github.com/HMBSbige/ShadowsocksR-Windows/releases/download/$version/ShadowsocksR-Portable-Win32-$version.zip#/dl.7z",
                 "hash": {
-                    "url": "https://github.com/NetchX/Netch/releases/tag/$version",
+                    "url": "https://github.com/HMBSbige/ShadowsocksR-Windows/releases/tag/$version",
                     "mode": "extract",
-                    "regex": [
-                        "Win32.*",
-                        ".*?$sha256"
-                    ]
+                    "regex": "Win32.*\n.*?$sha256"
                 }
             }
         }
