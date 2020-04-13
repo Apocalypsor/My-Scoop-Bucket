@@ -2,13 +2,11 @@
     "homepage": "https://github.com/tonikelope/megabasterd",
     "description": "Yet another unofficial (and ugly) cross-platform MEGA downloader/uploader/streaming suite.",
     "license": "GPL-3.0",
-    "version": "7.23",
-    "url": "https://github.com/tonikelope/megabasterd/releases/download/v7.23/MegaBasterdWindowsPortable_7.23.zip",
-    "hash": "C9FAF783506759BA0C1CEB594149E352E49E0370428A5088352317B71971F44A",
+    "version": "7.24",
+    "url": "https://github.com/tonikelope/megabasterd/releases/download/v7.24/MegaBasterdWindowsPortable_7.24.zip",
+    "hash": "c82e2ce6a092048876f00d5e51389efea23580d8fe0eec949a59c5a5949c9df6",
     "installer": {
-        "script": [
-            "Get-ChildItem \"$dir\\MegaBasterdJRE_*.exe\" | Rename-Item -NewName \"$dir\\MegaBasterd.exe\" | Out-Null"
-        ]
+        "script": "Get-ChildItem \"$dir\\MegaBasterdJRE_*.exe\" | Rename-Item -NewName \"$dir\\MegaBasterd.exe\" | Out-Null"
     },
     "shortcuts": [
         [
