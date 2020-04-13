@@ -1,7 +1,8 @@
 on:
   schedule:
-    - cron: 0 * * * *
-
+    - cron: "0 * * * *"
+      
+name: Update bucket
 jobs:
   excavate:
     name: Excavate
