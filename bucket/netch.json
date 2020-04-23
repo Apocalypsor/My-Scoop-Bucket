@@ -2,15 +2,15 @@
     "homepage": "https://github.com/NetchX/Netch",
     "description": "Game accelerator. Support Socks5, Shadowsocks, ShadowsocksR, V2Ray protocol. UDP NAT FullCone",
     "license": "MIT",
-    "version": "1.4.1",
+    "version": "1.4.2",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/NetchX/Netch/releases/download/v1.4.1/Netch.x64-v1.4.1.zip",
-            "hash": "7170ed0ade0b261c2cbab4861116f3cb1fef93d18c5268ebde59facf15656012"
+            "url": "https://github.com/NetchX/Netch/releases/download/1.4.2/Netch.x64-1.4.2.zip",
+            "hash": "407a3c49c1bd53bc7a0abe8097893b3be5a5510dc77700121b8ec0708f1a6d1a"
         },
         "32bit": {
-            "url": "https://github.com/NetchX/Netch/releases/download/v1.4.1/Netch.x86-v1.4.1.zip",
-            "hash": "4faa31059ec8752f357697e584a21271c5bc1ad5ac9a34db9e68e4d456164c34"
+            "url": "https://github.com/NetchX/Netch/releases/download/1.4.2/Netch.x86-1.4.2.zip",
+            "hash": "adb752419e57af6781c23749417dfedfa5286df6814d0717e597e9fe2e766ce6"
         }
     },
     "pre_install": [
@@ -35,17 +35,17 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/NetchX/Netch/releases/download/v$version/Netch.x64-v$version.zip",
+                "url": "https://github.com/NetchX/Netch/releases/download/$version/Netch.x64-$version.zip",
                 "hash": {
-                    "url": "https://github.com/NetchX/Netch/releases/tag/v$version",
+                    "url": "https://github.com/NetchX/Netch/releases/tag/$version",
                     "mode": "extract",
                     "regex": "(?sm)x64.*?$sha256"
                 }
             },
             "32bit": {
-                "url": "https://github.com/NetchX/Netch/releases/download/v$version/Netch.x86-v$version.zip",
+                "url": "https://github.com/NetchX/Netch/releases/download/$version/Netch.x86-$version.zip",
                 "hash": {
-                    "url": "https://github.com/NetchX/Netch/releases/tag/v$version",
+                    "url": "https://github.com/NetchX/Netch/releases/tag/$version",
                     "mode": "extract",
                     "regex": "(?sm)x86.*?$sha256"
                 }
