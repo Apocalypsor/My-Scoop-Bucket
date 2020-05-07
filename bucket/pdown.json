@@ -16,6 +16,6 @@
     ],
     "checkver": "github",
     "autoupdate": {
-        "url": "https://github.com/tonikelope/megabasterd/releases/download/v$version/PDownv$version.zip"
+        "url": "https://github.com/pdown2020/pdown/releases/download/v$version/PDownv$version.zip"
     }
 }
