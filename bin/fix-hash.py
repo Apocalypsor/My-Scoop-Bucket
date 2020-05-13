@@ -55,7 +55,5 @@ if tag != manifest['version']:
             
     manifest['hash'] = n_hash
 
-print(manifest)
-
 with open(ndir, 'w') as f:
     json.dump(manifest, f, indent=4, separators=(',', ': '))
