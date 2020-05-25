@@ -2,9 +2,9 @@
     "homepage": "https://github.com/pdown2020/pdown",
     "description": "百度网盘下载器，2020百度网盘高速下载。",
     "license": "MIT",
-    "version": "1.1.4.4",
-    "url": "https://github.com/pdown2020/pdown/releases/download/v1.1.4.4/PDownv1.1.4.4.zip",
-    "hash": "1681e681ca1c034f3359deedcdda08320d05e0bba468daa4eb69c1d944d25946",
+    "version": "2.23.43",
+    "url": "https://github.com/pdown2020/pdown/releases/download/v2.23.43/PDownv2.23.43.zip",
+    "hash": "944ccc5c55b0177c29097ed2589e3193b77a550a30a6ab0fd064305377d7bb60",
     "installer": {
         "script": "Get-ChildItem \"$dir\\PDown*.exe\" | Rename-Item -NewName \"$dir\\PDown.exe\" | Out-Null"
     },
