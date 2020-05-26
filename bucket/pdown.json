@@ -4,7 +4,7 @@
     "license": "MIT",
     "version": "2.23.43",
     "url": "https://github.com/pdown2020/pdown/releases/download/v2.23.43/PDownv2.23.43.zip",
-    "hash": "944ccc5c55b0177c29097ed2589e3193b77a550a30a6ab0fd064305377d7bb60",
+    "hash": "eafab42e01257e18526439d13130c3b7269078b05bd3d0f7c48f6d09a475ee10",
     "installer": {
         "script": "Get-ChildItem \"$dir\\PDown*.exe\" | Rename-Item -NewName \"$dir\\PDown.exe\" | Out-Null"
     },
