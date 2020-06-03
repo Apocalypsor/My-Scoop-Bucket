@@ -23,7 +23,7 @@
     ],
     "checkver": "github",
     "autoupdate": {
-        "url": "https://github.com/NetchX/Netch/releases/download/$version/Netch-$version.zip",
+        "url": "https://github.com/NetchX/Netch/releases/download/$version/Netch.zip",
         "hash": {
             "url": "https://github.com/NetchX/Netch/releases/tag/$version",
             "mode": "extract",
