@@ -14,7 +14,7 @@ jobs:
       env:
         GITH_EMAIL: 37431235+Apocalypsor@users.noreply.github.com
         GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
-        SKIP_UPDATED: '1'
+        SKIP_UPDATED: '0'
 
   fix-hash:
     name: fix hash errors

@@ -24,7 +24,7 @@ with open(cfwdir, 'r') as f:
 
 with requests.get('https://github.com/Fndroid/clash_for_windows_pkg/releases/download/' + manifest['version'] + '/sha256sum') as r:
     sha256sum = r.text
-    cfw_hash = sha256sum.split('7z: ')[1].split('\n')[0].lower()
+    cfw_hash = sha256sum.split('exe: ')[1].split('\n')[0].lower()
 
 if cfw_hash != manifest['hash']:
     manifest['hash'] = cfw_hash
