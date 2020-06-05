@@ -25,6 +25,17 @@
         "    (New-Item -Force -ItemType \"file\" -Path \"$dir\\resources\\static\\files\\config.yaml\") | Out-Null",
         "}"
     ],
+    "depends": [
+        "7zip"
+    ],
+    "installer": {
+        "script": [
+            "7z x -o\"$cachedir\\tmp\" \"$original_dir\\`$PLUGINSDIR\\app-64.7z\" -r -aoa -y | Out-Null",
+            "Remove-Item $original_dir -Recurse -Force | Out-Null",
+            "Move-Item -Path $cachedir\\tmp\\* -Destination $original_dir -Force | Out-Null",
+            "Remove-Item $cachedir\\tmp -Recurse -Force | Out-Null"
+        ]
+    },
     "persist": [
         [
             "resources\\static\\files\\config.yaml",
