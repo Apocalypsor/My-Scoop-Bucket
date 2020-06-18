@@ -1,10 +1,10 @@
 {
     "homepage": "https://github.com/Fndroid/clash_for_windows_pkg",
     "description": "A Windows GUI based on Clash",
-    "version": "0.10.1",
+    "version": "0.10.2",
     "license": "MIT",
-    "url": "https://github.com/Fndroid/clash_for_windows_pkg/releases/download/0.10.1/Clash.for.Windows.Setup.0.10.1.exe#/dl.7z",
-    "hash": "d8dce95d46766fc4704fcfaa93121e4b2b4d854a919029aaa247323a30f029e2",
+    "url": "https://github.com/Fndroid/clash_for_windows_pkg/releases/download/0.10.2/Clash.for.Windows.Setup.0.10.2.exe#/dl.7z",
+    "hash": "ecf54737291125a7d1689f3c6a8e7ac993a3390c2337ab9bc1254f7c4d7bf9de",
     "shortcuts": [
         [
             "Clash for Windows.exe",
@@ -25,9 +25,7 @@
         "    (New-Item -Force -ItemType \"file\" -Path \"$dir\\resources\\static\\files\\config.yaml\") | Out-Null",
         "}"
     ],
-    "depends": [
-        "7zip"
-    ],
+    "depends": "7zip",
     "installer": {
         "script": [
             "7z x -o\"$cachedir\\tmp\" \"$original_dir\\`$PLUGINSDIR\\app-64.7z\" -r -aoa -y | Out-Null",
