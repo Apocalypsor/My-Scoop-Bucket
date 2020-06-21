@@ -22,7 +22,7 @@
     },
     "pre_install": [
         "if (!(Test-Path \"$persist_dir\\config.yaml\")) {",
-        "    (New-Item -Force -ItemType \"file\" -Path \"$dir\\resources\\static\\files\\config.yaml\") | Out-Null",
+        "    (New-Item -Force -Name \"config.yaml\" -ItemType \"file\" -Path \"$dir\\resources\\static\\files\") | Out-Null",
         "}"
     ],
     "depends": "7zip",
