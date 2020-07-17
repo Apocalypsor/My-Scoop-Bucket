@@ -40,6 +40,10 @@
             "config.yaml"
         ],
         [
+            "resources\\static\\files\\cfw-settings.yaml",
+            "cfw-settings.yaml"
+        ],
+        [
             "resources\\static\\files\\profiles",
             "profiles"
         ]
