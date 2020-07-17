@@ -20,8 +20,8 @@
             "regex": "exe: $sha256"
         }
     },
-    "pre_install":[
-        "if (!(Test-Path \"$persist_dir\\config.yaml\")) {",     
+    "pre_install": [
+        "if (!(Test-Path \"$persist_dir\\config.yaml\")) {",
         "    if (!(Test-Path \"$persist_dir\")) {",
         "        New-Item \"$persist_dir\" -ItemType Directory -Force | Out-Null",
         "    }",
