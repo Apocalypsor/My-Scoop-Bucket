@@ -29,8 +29,8 @@ with requests.get('https://github.com/Fndroid/clash_for_windows_pkg/releases/dow
 if cfw_hash != manifest['hash']:
     manifest['hash'] = cfw_hash
 
-with open(cfwdir, 'w') as f:
-    json.dump(manifest, f, indent=4, separators=(',', ': '))
+    with open(cfwdir, 'w') as f:
+        json.dump(manifest, f, indent=4, separators=(',', ': '))
 
 # Netch
 ndir = workdir + os.sep + 'bucket' + os.sep + 'netch.json'
@@ -55,5 +55,5 @@ if tag != manifest['version']:
             
     manifest['hash'] = n_hash
 
-with open(ndir, 'w') as f:
-    json.dump(manifest, f, indent=4, separators=(',', ': '))
+    with open(ndir, 'w') as f:
+        json.dump(manifest, f, indent=4, separators=(',', ': '))
