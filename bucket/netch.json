@@ -2,9 +2,9 @@
     "homepage": "https://github.com/NetchX/Netch",
     "description": "Game accelerator. Support Socks5, Shadowsocks, ShadowsocksR, V2Ray protocol. UDP NAT FullCone",
     "license": "MIT",
-    "version": "1.4.12",
-    "url": "https://github.com/NetchX/Netch/releases/download/1.4.12/Netch.zip",
-    "hash": "26122511393a42bc903c451b4ebaa3bb083aee631640ef39360d7355c8d8d511",
+    "version": "1.5.0",
+    "url": "https://github.com/NetchX/Netch/releases/download/1.5.0/Netch.7z",
+    "hash": "3412fc4890f29d1520ff15a728eee6a231ad5db05eee7bbabbede1ffa9260a7f",
     "pre_install": [
         "if (!(Test-Path \"$persist_dir\\mode_own\")) {",
         "    (New-Item -Force -ItemType \"directory\" -Path \"$dir\\mode_own\") | Out-Null",
