@@ -8,7 +8,9 @@
     "pre_install": [
         "if (!(Test-Path \"$persist_dir\\mode_own\")) {",
         "    (New-Item -Force -ItemType \"directory\" -Path \"$dir\\mode_own\") | Out-Null",
-        "}"
+        "}",
+        "ensure \"$dir\\data\" | Out-Null",
+        "if (!(Test-Path \"$persist_dir\\data\\settings.json\")) { Set-Content \"$dir\\data\\settings.json\" '{ \"CheckUpdateWhenOpened\": false }' -Encoding Ascii -Force }"
     ],
     "persist": [
         "data",
@@ -26,11 +28,7 @@
         "url": "https://github.com/NetchX/Netch/releases/download/$version/Netch.7z",
         "hash": {
             "url": "https://github.com/NetchX/Netch/releases/tag/$version",
-            "mode": "extract",
-            "regex": [
-                "Netch.+zip.+",
-                ".+$sha256"
-            ]
+            "regex": "(?sm)$basename</td.*?$sha256"
         }
     }
 }
