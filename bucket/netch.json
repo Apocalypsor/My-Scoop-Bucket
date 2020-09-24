@@ -19,7 +19,7 @@
     "post_install": "(Copy-Item -Force -Path \"$dir\\Netch\\mode_own\\*\" -Destination \"$dir\\Netch\\mode\") | Out-Null",
     "shortcuts": [
         [
-            "Netch.exe",
+            "Netch\\Netch.exe",
             "Netch"
         ]
     ],
