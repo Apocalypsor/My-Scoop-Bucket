@@ -33,7 +33,7 @@ jobs:
     - name: Fix hash errors
       run: |
         python ./bin/fix-hash.py   
-    - uses: autosuite/autocommit@master
+    - uses: autosuite/autocommit@main
       with:
         commit-message: fix hash errors
         add-options: -A
