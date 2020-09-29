@@ -4,12 +4,12 @@
     "version": "5.1.9",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/HMBSbige/ShadowsocksR-Windows/releases/download/5.1.9/ShadowsocksR-Portable-Win64-5.1.9.zip#/dl.7z",
-            "hash": "61ef54867cbad8d3b26cf9668f41dcefb85d8c17709306dc286da62512743d40"
+            "url": "https://github.com/HMBSbige/ShadowsocksR-Windows/releases/download/5.1.10/ShadowsocksR-Portable-Win64-5.1.10.7z#/dl.7z",
+            "hash": "647ddc14036642f32ae4ea61b242d3237bcc83d27221a5e90f3467efa9c7342a"
         },
         "32bit": {
-            "url": "https://github.com/HMBSbige/ShadowsocksR-Windows/releases/download/5.1.9/ShadowsocksR-Portable-Win32-5.1.9.zip#/dl.7z",
-            "hash": "2305d0ce270d9a89e4dd09de818bf8d51b99ff116a2d46bc3d452c37b4ef99e2"
+            "url": "https://github.com/HMBSbige/ShadowsocksR-Windows/releases/download/5.1.10/ShadowsocksR-Portable-Win32-5.1.10.7z#/dl.7z",
+            "hash": "6b67ed2987045800c96c6bc5a1dcc62e8060c7a4cd4ac22e9b4f43893e985972"
         }
     },
     "pre_install": [
