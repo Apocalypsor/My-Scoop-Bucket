@@ -5,16 +5,11 @@ import hashlib
 
 workdir = os.getcwd()
 
-def getHash(filename):
-   h = hashlib.sha256()
+def getHash(file):
+    h = hashlib.sha256()
+    h.update(file)
 
-   with open(filename,'rb') as file:
-       chunk = 0
-       while chunk != b'':
-           chunk = file.read(1024)
-           h.update(chunk)
-
-   return h.hexdigest()
+    return h.hexdigest()
 
 # Clash
 cfwdir = workdir + os.sep + 'bucket' + os.sep + 'clash-for-windows.json'
@@ -22,9 +17,8 @@ cfwdir = workdir + os.sep + 'bucket' + os.sep + 'clash-for-windows.json'
 with open(cfwdir, 'r') as f:
     manifest = json.load(f)
 
-with requests.get('https://github.com/Fndroid/clash_for_windows_pkg/releases/download/' + manifest['version'] + '/sha256sum') as r:
-    sha256sum = r.text
-    cfw_hash = sha256sum.split('exe: ')[1].split('\n')[0].lower()
+with requests.get('https://github.com/Fndroid/clash_for_windows_pkg/releases/download/' + manifest['version'] + '/Clash.for.Windows.Setup.' + manifest['version'] + '.exe') as r:
+    cfw_hash = getHash(r.content)
 
 if cfw_hash != manifest['hash']:
     manifest['hash'] = cfw_hash
@@ -46,12 +40,9 @@ with requests.get('https://api.github.com/repos/NetchX/Netch/releases/latest') a
 if tag != manifest['version']:
     manifest['version'] = tag
     manifest['url'] = url
-    tmp = 'tmp'
+
     with requests.get(url) as r:
-        with open(tmp, 'wb') as f:
-            f.write(r.content)
-    n_hash = getHash(tmp)
-    os.remove(tmp) 
+        n_hash = getHash(r.content)
             
     manifest['hash'] = n_hash
 
