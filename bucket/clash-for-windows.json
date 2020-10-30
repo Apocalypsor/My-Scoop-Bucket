@@ -52,9 +52,7 @@
             "}"
         ]
     },
-    "persist": [
-        "data"
-    ],
+    "persist": "data",
     "checkver": "github",
     "autoupdate": {
         "architecture": {
