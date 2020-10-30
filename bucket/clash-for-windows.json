@@ -3,28 +3,21 @@
     "description": "A Windows GUI based on Clash",
     "version": "0.13.1",
     "license": "MIT",
-    "url": "https://github.com/Fndroid/clash_for_windows_pkg/releases/download/0.13.1/Clash.for.Windows.Setup.0.13.1.exe#/dl.7z",
-    "hash": "8ff7c72573fb8c2c620d815e6d7531825f7bd8fdfcae0fe135b7825150f6fdf9",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/Fndroid/clash_for_windows_pkg/releases/download/0.13.1/Clash.for.Windows.Setup.0.13.1.exe#/dl.7z",
+            "hash": "8ff7c72573fb8c2c620d815e6d7531825f7bd8fdfcae0fe135b7825150f6fdf9"
+        },
+        "32bit": {
+            "url": "https://github.com/Fndroid/clash_for_windows_pkg/releases/download/0.13.1/Clash.for.Windows.Setup.0.13.1.ia32.exe#/dl.7z",
+            "hash": "42810808b43605060d218cb4a16a6258b17e8edd4d78aa000121e31383942f05"
+        }
+    },
     "shortcuts": [
         [
             "Clash for Windows.exe",
             "Clash for Windows"
         ]
-    ],
-    "checkver": "github",
-    "autoupdate": {
-        "url": "https://github.com/Fndroid/clash_for_windows_pkg/releases/download/$version/Clash.for.Windows.Setup.$version.exe#/dl.7z"
-    },
-    "pre_install": [
-        "if (!(Test-Path \"$persist_dir\\config.yaml\")) {",
-        "    if (!(Test-Path \"$persist_dir\")) {",
-        "        New-Item \"$persist_dir\" -ItemType Directory -Force | Out-Null",
-        "    }",
-        "    Add-Content \"$persist_dir\\config.yaml\" $null ",
-        "}",
-        "if (!(Test-Path \"$persist_dir\\cfw-settings.yaml\")) {",
-        "    Add-Content \"$persist_dir\\cfw-settings.yaml\" $null ",
-        "}"
     ],
     "installer": {
         "script": [
@@ -32,18 +25,55 @@
             "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\Uninst*\" -Force -Recurse"
         ]
     },
-    "persist": [
-        [
-            "resources\\static\\files\\config.yaml",
-            "config.yaml"
-        ],
-        [
-            "resources\\static\\files\\cfw-settings.yaml",
-            "cfw-settings.yaml"
-        ],
-        [
-            "resources\\static\\files\\profiles",
-            "profiles"
+    "pre_install": [
+        "if (Test-Path \"$persist_dir\\clash_win\") {",
+        "    Move-Item \"$persist_dir\\clash_win\" \"$env:appdata\" -Force",
+        "}",
+        "if (!(Test-Path \"$persist_dir\")) {",
+        "    New-Item \"$persist_dir\" -Type Directory -Force | Out-Null",
+        "    if (Test-Path \"$HOME\\.config\\clash\") {",
+        "        Write-Host 'Importing config files from user directory for first install...' -ForegroundColor Yellow",
+        "        Copy-Item \"$HOME\\.config\\clash\\*\" \"$persist_dir\" -Force -Recurse",
+        "        Write-Host 'Import succeded!' -ForegroundColor Yellow",
+        "        Write-Host 'Portable version uses config files in app directory, ones in user directory can be removed by running' -ForegroundColor Yellow",
+        "        Write-Host 'Remove-Item \"$HOME\\.config\\clash\" -Force -Recurse' -ForegroundColor Green",
+        "    }",
+        "}",
+        "if (!(Test-Path \"$persist_dir\\data\")) {",
+        "    New-Item \"$persist_dir\\data\" -Type Directory -Force | Out-Null",
+        "    Get-ChildItem \"$persist_dir\" -Exclude \"data\" | Move-Item -Destination \"$persist_dir\\data\" -Force",
+        "}",
+        "Get-ChildItem \"$persist_dir\\data\" -Filter \"Country.mmdb\" | Remove-Item -Force"
+    ],
+    "uninstaller": {
+        "script": [
+            "if (Test-Path \"$env:appdata\\clash_win\") {",
+            "    Move-Item \"$env:appdata\\clash_win\" \"$persist_dir\" -Force",
+            "}"
         ]
-    ]
+    },
+    "persist": [
+        "data"
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/Fndroid/clash_for_windows_pkg/releases/download/$version/Clash.for.Windows.Setup.$version.exe#/dl.7z",
+                "hash": {
+                    "url": "https://github.com/Fndroid/clash_for_windows_pkg/releases/download/$version/sha256sum",
+                    "mode": "extract",
+                    "regex": "^exe: $sha256"
+                }
+            },
+            "32bit": {
+                "url": "https://github.com/Fndroid/clash_for_windows_pkg/releases/download/$version/Clash.for.Windows.Setup.$version.ia32.exe#/dl.7z",
+                "hash": {
+                    "url": "https://github.com/Fndroid/clash_for_windows_pkg/releases/download/$version/sha256sum",
+                    "mode": "extract",
+                    "regex": "^ia32-exe: $sha256"
+                }
+            }
+        }
+    }
 }
