@@ -1,0 +1,32 @@
+name: Fix Errors
+
+on:
+  schedule:
+    - cron: "30 * * * *"
+
+jobs:
+  fix-hash:
+    name: Fix Errors
+    runs-on: ubuntu-latest 
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies 
+      run: |
+        python -m pip install --upgrade pip
+        pip install requests
+    - name: Fix hash errors
+      run: |
+        python ./bin/fix-hash.py   
+    - uses: autosuite/autocommit@main
+      with:
+        commit-message: Fix errors
+        add-options: -A
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.REPO_TOKEN }}

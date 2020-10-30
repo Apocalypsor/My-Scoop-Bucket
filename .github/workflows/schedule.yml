@@ -1,43 +1,18 @@
+name: Update Bucket
+
 on:
   schedule:
     - cron: "0 * * * *"
-      
-name: Update bucket
+
 jobs:
   excavate:
     name: Excavate
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
+    - uses: actions/checkout@v2
     - name: Excavate
       uses: Ash258/Scoop-GithubActions@stable
       env:
         GITH_EMAIL: 37431235+Apocalypsor@users.noreply.github.com
         GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
         SKIP_UPDATED: '1'
-
-  fix-hash:
-    name: fix hash errors
-    runs-on: ubuntu-latest 
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: '3.x'
-    - name: Install dependencies 
-      run: |
-        python -m pip install --upgrade pip
-        pip install requests
-    - name: Fix hash errors
-      run: |
-        python ./bin/fix-hash.py   
-    - uses: autosuite/autocommit@main
-      with:
-        commit-message: fix hash errors
-        add-options: -A
-    - name: Push changes
-      uses: ad-m/github-push-action@master
-      with:
-        github_token: ${{ secrets.REPO_TOKEN }}
