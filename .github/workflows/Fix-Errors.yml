@@ -13,6 +13,8 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
+      with:
+        token: ${{ secrets.REPO_TOKEN }}
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
@@ -24,11 +26,8 @@ jobs:
     - name: Fix hash errors
       run: |
         python ./bin/fix-hash.py   
-    - uses: autosuite/autocommit@main
+    - name: Push
+      uses: stefanzweifel/git-auto-commit-action@v4
       with:
-        commit-message: Fix errors
-        add-options: -A
-    - name: Push changes
-      uses: ad-m/github-push-action@master
-      with:
-        github_token: ${{ secrets.REPO_TOKEN }}
+        commit_message: Fix errors
+        skip_dirty_check: false
