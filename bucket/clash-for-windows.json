@@ -23,7 +23,7 @@
         "script": [
             "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\"",
             "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\Uninst*\" -Force -Recurse",
-            "New-Item \"$dir\\data\" -Type Directory -Force",
+            "New-Item \"$dir\\data\" -Type Directory -Force"
         ]
     },
     "pre_install": [
