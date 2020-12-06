@@ -26,33 +26,17 @@
         ]
     },
     "pre_install": [
-        "if (Test-Path \"$persist_dir\\clash_win\") {",
-        "    Move-Item \"$persist_dir\\clash_win\" \"$env:appdata\" -Force",
+        "if (!(Test-Path \"$persist_dir\\profiles\")) {",
+        "    New-Item \"$persist_dir\\profiles\" -Type Directory -Force | Out-Null"
         "}",
-        "if (!(Test-Path \"$persist_dir\")) {",
-        "    New-Item \"$persist_dir\" -Type Directory -Force | Out-Null",
-        "    if (Test-Path \"$HOME\\.config\\clash\") {",
-        "        Write-Host 'Importing config files from user directory for first install...' -ForegroundColor Yellow",
-        "        Copy-Item \"$HOME\\.config\\clash\\*\" \"$persist_dir\" -Force -Recurse",
-        "        Write-Host 'Import succeded!' -ForegroundColor Yellow",
-        "        Write-Host 'Portable version uses config files in app directory, ones in user directory can be removed by running' -ForegroundColor Yellow",
-        "        Write-Host 'Remove-Item \"$HOME\\.config\\clash\" -Force -Recurse' -ForegroundColor Green",
-        "    }",
-        "}",
-        "if (!(Test-Path \"$persist_dir\\data\")) {",
-        "    New-Item \"$persist_dir\\data\" -Type Directory -Force | Out-Null",
-        "    Get-ChildItem \"$persist_dir\" -Exclude \"data\" | Move-Item -Destination \"$persist_dir\\data\" -Force",
-        "}",
-        "Get-ChildItem \"$persist_dir\\data\" -Filter \"Country.mmdb\" | Remove-Item -Force"
+        "if (!(Test-Path \"$persist_dir\\cfw-settings.yaml\")) {",
+        "    New-Item \"$persist_dir\\profiles\" -Type File -Force | Out-Null"
+        "}"
     ],
-    "uninstaller": {
-        "script": [
-            "if (Test-Path \"$env:appdata\\clash_win\") {",
-            "    Move-Item \"$env:appdata\\clash_win\" \"$persist_dir\" -Force",
-            "}"
-        ]
-    },
-    "persist": "data",
+    "persist": [
+        ["data\\profiles", "profiles"]
+        ["data\\cfw-settings.yaml", "cfw-settings.yaml"]
+    ],
     "checkver": "github",
     "autoupdate": {
         "architecture": {
