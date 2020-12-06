@@ -27,14 +27,14 @@
     },
     "pre_install": [
         "if (!(Test-Path \"$persist_dir\\profiles\")) {",
-        "    New-Item \"$persist_dir\\profiles\" -Type Directory -Force | Out-Null"
+        "    New-Item \"$persist_dir\\profiles\" -Type Directory -Force | Out-Null",
         "}",
         "if (!(Test-Path \"$persist_dir\\cfw-settings.yaml\")) {",
-        "    New-Item \"$persist_dir\\profiles\" -Type File -Force | Out-Null"
+        "    New-Item \"$persist_dir\\profiles\" -Type File -Force | Out-Null",
         "}"
     ],
     "persist": [
-        ["data\\profiles", "profiles"]
+        ["data\\profiles", "profiles"],
         ["data\\cfw-settings.yaml", "cfw-settings.yaml"]
     ],
     "checkver": "github",
