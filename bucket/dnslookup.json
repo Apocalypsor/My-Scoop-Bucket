@@ -6,11 +6,23 @@
     "architecture": {
         "64bit": {
             "url": "https://github.com/ameshkov/dnslookup/releases/download/v1.4.4/dnslookup-windows-amd64-v1.4.4.zip",
-            "hash": "d20abf6782c02c1f760f4f0053a04b9a66eed1d7a76864a8b408c0072bd98027"
+            "hash": "d20abf6782c02c1f760f4f0053a04b9a66eed1d7a76864a8b408c0072bd98027",
+            "bin": [
+                [
+                    "windows-amd64/dnslookup.exe",
+                    "dnslookup"
+                ]
+            ]
         },
         "32bit": {
             "url": "https://github.com/ameshkov/dnslookup/releases/download/v1.4.4/dnslookup-windows-386-v1.4.4.zip",
-            "hash": "a30d85190f74f5cc025458ef7b6b778daf479611c7e0bebd79557d2fdef5d636"
+            "hash": "a30d85190f74f5cc025458ef7b6b778daf479611c7e0bebd79557d2fdef5d636",
+            "bin": [
+                [
+                    "windows-386/dnslookup.exe",
+                    "dnslookup"
+                ]
+            ]
         }
     },
     "bin": [
