@@ -1,0 +1,33 @@
+{
+    "homepage": "https://github.com/ameshkov/dnslookup",
+    "description": "Simple command line utility to make DNS lookups. Supports all known DNS protocols: plain DNS, DoH, DoT, DoQ, DNSCrypt.",
+    "license": "GPL-3.0",
+    "version": "1.4.4",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/ameshkov/dnslookup/releases/download/v1.4.4/dnslookup-windows-amd64-v1.4.4.zip",
+            "hash": "d20abf6782c02c1f760f4f0053a04b9a66eed1d7a76864a8b408c0072bd98027"
+        },
+        "32bit": {
+            "url": "https://github.com/ameshkov/dnslookup/releases/download/v1.4.4/dnslookup-windows-386-v1.4.4.zip",
+            "hash": "a30d85190f74f5cc025458ef7b6b778daf479611c7e0bebd79557d2fdef5d636"
+        }
+    },
+    "bin": [
+        [
+            "dnslookup.exe",
+            "dnslookup"
+        ]
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/ameshkov/dnslookup/releases/download/v$version/dnslookup-windows-amd64-v$version.zip"
+            },
+            "32bit": {
+                "url": "https://github.com/ameshkov/dnslookup/releases/download/v$version/dnslookup-windows-386-v$version.zip"
+            }
+        }
+    }
+}
