@@ -7,25 +7,20 @@
     "hash": "a57b059019a9bf9918f7a1151d485fc08a2ab074c5240226c4e3b5f50a3aed5c",
     "pre_install": [
         "if (!(Test-Path \"$persist_dir\\mode_own\")) {",
-        "    (New-Item -Force -ItemType \"directory\" -Path \"$dir\\Netch\\mode_own\") | Out-Null",
+        "    (New-Item -Force -ItemType \"directory\" -Path \"$dir\\mode_own\") | Out-Null",
         "}",
-        "ensure \"$dir\\Netch\\data\" | Out-Null",
-        "if (!(Test-Path \"$persist_dir\\Netch\\data\\settings.json\")) { Set-Content \"$dir\\Netch\\data\\settings.json\" '{ \"CheckUpdateWhenOpened\": false }' -Encoding Ascii -Force }"
+        "if (!(Test-Path \"$persist_dir\\data\\settings.json\")) {",
+        "    (Set-Content \"$dir\\data\\settings.json\" '{ \"CheckUpdateWhenOpened\": false }' -Encoding Ascii -Force) | Out-Null",
+        "}"
     ],
     "persist": [
-        [
-            "Netch\\data",
-            "data"
-        ],
-        [
-            "Netch\\mode_own",
-            "mode_own"
-        ]
+        "data",
+        "mode_own"
     ],
-    "post_install": "(Copy-Item -Force -Path \"$dir\\Netch\\mode_own\\*\" -Destination \"$dir\\Netch\\mode\") | Out-Null",
+    "post_install": "(Copy-Item -Force -Path \"$dir\\mode_own\\*\" -Destination \"$dir\\Netch\\mode\") | Out-Null",
     "shortcuts": [
         [
-            "Netch\\Netch.exe",
+            "Netch.exe",
             "Netch"
         ]
     ],
