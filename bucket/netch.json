@@ -17,7 +17,7 @@
         "data",
         "mode_own"
     ],
-    "post_install": "(Copy-Item -Force -Path \"$dir\\mode_own\\*\" -Destination \"$dir\\Netch\\mode\") | Out-Null",
+    "post_install": "(Copy-Item -Force -Path \"$dir\\mode_own\\*\" -Destination \"$dir\\mode\") | Out-Null",
     "shortcuts": [
         [
             "Netch.exe",
