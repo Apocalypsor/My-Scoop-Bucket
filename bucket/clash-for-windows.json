@@ -6,11 +6,25 @@
     "architecture": {
         "64bit": {
             "url": "https://github.com/Fndroid/clash_for_windows_pkg/releases/download/0.14.1/Clash.for.Windows.Setup.0.14.1.exe#/dl.7z",
-            "hash": "b2a5eef1f5ebf3717e79cb051fb214b9812918bd43bb863137d113dd5a0191db"
+            "hash": "b2a5eef1f5ebf3717e79cb051fb214b9812918bd43bb863137d113dd5a0191db",
+            "post_install": [
+                "Write-Output \"Installing Wintun ...\"",
+                "Invoke-WebRequest -Uri \"https://cdn.jsdelivr.net/gh/Apocalypsor/My-Scoop-Bucket/files/Wintun.zip\" -OutFile \"$dir\\Wintun.zip\" | Out-Null",
+                "Expand-Archive -Path \"$dir\\Wintun.zip\" -DestinationPath \"$dir\" | Out-Null",
+                "Copy-Item \"$dir\\wintun\\bin\\amd64\\wintun.dll\" -Destination \"$dir\\data\" -Force | Out-Null",
+                "Remove-Item \"$dir\\wintun\" -Recurse -Force | Out-Null"
+            ]
         },
         "32bit": {
             "url": "https://github.com/Fndroid/clash_for_windows_pkg/releases/download/0.14.1/Clash.for.Windows.Setup.0.14.1.ia32.exe#/dl.7z",
-            "hash": "649e9cfeb1ba8fab1e9490d1eb62b28059f213cfbb78a584dc525353bc43f096"
+            "hash": "649e9cfeb1ba8fab1e9490d1eb62b28059f213cfbb78a584dc525353bc43f096",
+            "post_install": [
+                "Write-Output \"Installing Wintun ...\"",
+                "Invoke-WebRequest -Uri \"https://cdn.jsdelivr.net/gh/Apocalypsor/My-Scoop-Bucket/files/Wintun.zip\" -OutFile \"$dir\\Wintun.zip\" | Out-Null",
+                "Expand-Archive -Path \"$dir\\Wintun.zip\" -DestinationPath \"$dir\" | Out-Null",
+                "Copy-Item \"$dir\\wintun\\bin\\x86\\wintun.dll\" -Destination \"$dir\\data\" -Force | Out-Null",
+                "Remove-Item \"$dir\\wintun\" -Recurse -Force | Out-Null"
+            ]
         }
     },
     "shortcuts": [
@@ -21,9 +35,9 @@
     ],
     "installer": {
         "script": [
-            "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\"",
-            "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\Uninst*\" -Force -Recurse",
-            "New-Item \"$dir\\data\" -Type Directory -Force"
+            "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\"  | Out-Null",
+            "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\Uninst*\" -Force -Recurse | Out-Null",
+            "New-Item \"$dir\\data\" -Type Directory -Force | Out-Null"
         ]
     },
     "pre_install": [
@@ -31,7 +45,7 @@
         "    New-Item \"$persist_dir\\profiles\" -Type Directory -Force | Out-Null",
         "}",
         "if (!(Test-Path \"$persist_dir\\cfw-settings.yaml\")) {",
-        "    New-Item \"$persist_dir\\profiles\" -Type File -Force | Out-Null",
+        "    New-Item \"$persist_dir\\cfw-settings.yaml\" -Type File -Force | Out-Null",
         "}"
     ],
     "persist": [
