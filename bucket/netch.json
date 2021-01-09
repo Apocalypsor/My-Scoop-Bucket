@@ -16,12 +16,12 @@
     ],
     "persist": [
         [
-            "data",
-            "Netch\\data"
+            "Netch\\data",
+            "data"
         ],
         [
-            "mode_own",
-            "Netch\\mode_own"
+            "Netch\\mode_own",
+            "mode_own"
         ]
     ],
     "post_install": "(Copy-Item -Force -Path \"$dir\\Netch\\mode_own\\*\" -Destination \"$dir\\Netch\\mode\") | Out-Null",
