@@ -6,7 +6,7 @@
     "url": "https://github.com/NetchX/Netch/releases/download/1.7.1/Netch.7z",
     "hash": "64e32585aeb1bf58e085ab5eff4dd0d27c34e05a7deb01c1f4aec4a89bbe9a9f",
     "pre_install": [
-        "New-Item -Force -ItemType \"directory\" -Path \"$dir\\Netch\") | Out-Null",
+        "New-Item -Force -ItemType \"directory\" -Path \"$dir\\Netch\" | Out-Null",
         "if (!(Test-Path \"$persist_dir\\mode_own\")) {",
         "    (New-Item -Force -ItemType \"directory\" -Path \"$dir\\Netch\\mode_own\") | Out-Null",
         "}",
