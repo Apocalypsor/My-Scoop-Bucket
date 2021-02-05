@@ -46,7 +46,8 @@
         "}",
         "if (!(Test-Path \"$persist_dir\\cfw-settings.yaml\")) {",
         "    New-Item \"$persist_dir\\cfw-settings.yaml\" -Type File -Force | Out-Null",
-        "}"
+        "}",
+        "Stop-Process -Name \"clash-core-service.exe\" -Force | Out-Null"
     ],
     "persist": [
         [
