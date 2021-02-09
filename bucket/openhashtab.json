@@ -4,7 +4,7 @@
     "homepage": "https://github.com/namazso/OpenHashTab",
     "license": "GPL-3.0",
     "depends": "innounp",
-    "url": "https://github.com/namazso/OpenHashTab/releases/download/v3.0.1/OpenHashTab_setup_user.exe",
+    "url": "https://github.com/namazso/OpenHashTab/releases/download/v3.0.1/OpenHashTab_setup_system.exe",
     "hash": "39f777e93ceb205fb008c936555a13d9a9aeef46e2bdc77b128f1366cb026df0",
     "installer": {
         "script": [
@@ -36,6 +36,6 @@
     },
     "checkver": "github",
     "autoupdate": {
-        "url": "https://github.com/namazso/OpenHashTab/releases/download/v$version/OpenHashTab_setup_user.exe"
+        "url": "https://github.com/namazso/OpenHashTab/releases/download/v$version/OpenHashTab_setup_system.exe"
     }
 }
