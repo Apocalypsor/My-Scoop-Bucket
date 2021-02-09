@@ -8,8 +8,10 @@
     "hash": "39f777e93ceb205fb008c936555a13d9a9aeef46e2bdc77b128f1366cb026df0",
     "installer": {
         "script": [
-            "if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] \"Administrator\")) {",
-            "Start-Process powershell.exe \"-NoProfile -ExecutionPolicy Bypass -File `\"$PSCommandPath`\"\" -Verb RunAs; exit }\"",
+            "if (!(is_admin)) {",
+            "    error \"Administrator rights are required to install $app.\"",
+            "    exit 1",
+            "}",
             "$installer = \"$dir\\OpenHashTab_setup_user.exe\"",
             "innounp -x $installer -d\"$dir\" -q",
             "if ([Environment]::Is64BitOperatingSystem) {",
@@ -25,8 +27,10 @@
     },
     "uninstaller": {
         "script": [
-            "if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] \"Administrator\")) {",
-            "Start-Process powershell.exe \"-NoProfile -ExecutionPolicy Bypass -File `\"$PSCommandPath`\"\" -Verb RunAs; exit }",
+            "if (!(is_admin)) {",
+            "    error \"Administrator rights are required to install $app.\"",
+            "    exit 1",
+            "}",
             "regsvr32 /u /s \"$dir\\OpenHashTab.dll\""
         ]
     },
