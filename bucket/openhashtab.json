@@ -1,0 +1,37 @@
+{
+    "version": "3.0.1",
+    "description": "OpenHashTab is a shell extension for conveniently calculating and checking file hashes from file properties.",
+    "homepage": "https://github.com/namazso/OpenHashTab",
+    "license": "GPL-3.0",
+    "depends": "innounp",
+    "url": "https://github.com/namazso/OpenHashTab/releases/download/v3.0.1/OpenHashTab_setup_user.exe",
+    "hash": "39f777e93ceb205fb008c936555a13d9a9aeef46e2bdc77b128f1366cb026df0",
+    "installer": {
+        "script": [
+            "if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] \"Administrator\")) {",
+            "Start-Process powershell.exe \"-NoProfile -ExecutionPolicy Bypass -File `\"$PSCommandPath`\"\" -Verb RunAs; exit }\"",
+            "$installer = \"$dir\\OpenHashTab_setup_user.exe\"",
+            "innounp -x $installer -d\"$dir\" -q",
+            "if ([Environment]::Is64BitOperatingSystem) {",
+            "    Move-Item \"$dir\\{app}\\OpenHashTab,1.dll\" -Destination \"$dir\\OpenHashTab.dll\"",
+            "} else {",
+            "    Move-Item \"$dir\\{app}\\OpenHashTab,3.dll\" -Destination \"$dir\\OpenHashTab.dll\"",
+            "}",
+            "regsvr32 /s \"$dir\\OpenHashTab.dll\"",
+            "Remove-Item $installer",
+            "Remove-Item \"$dir\\install_script.iss\"",
+            "Remove-Item \"$dir\\{app}\" -Recurse"
+        ]
+    },
+    "uninstaller": {
+        "script": [
+            "if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] \"Administrator\")) {",
+            "Start-Process powershell.exe \"-NoProfile -ExecutionPolicy Bypass -File `\"$PSCommandPath`\"\" -Verb RunAs; exit }",
+            "regsvr32 /u /s \"$dir\\OpenHashTab.dll\""
+        ]
+    },
+    "checkver": "github",
+    "autoupdate": {
+        "url": "https://github.com/namazso/OpenHashTab/releases/download/v$version/OpenHashTab_setup_user.exe"
+    }
+}
