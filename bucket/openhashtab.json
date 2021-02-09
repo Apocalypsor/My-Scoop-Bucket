@@ -5,14 +5,14 @@
     "license": "GPL-3.0",
     "depends": "innounp",
     "url": "https://github.com/namazso/OpenHashTab/releases/download/v3.0.1/OpenHashTab_setup_system.exe",
-    "hash": "39f777e93ceb205fb008c936555a13d9a9aeef46e2bdc77b128f1366cb026df0",
+    "hash": "e1cf603ea6fc081b006b18d10b619a15c29f43d3135a47a32258274132e75551",
     "installer": {
         "script": [
             "if (!(is_admin)) {",
-            "    error \"Administrator rights are required to install $app.\"",
+            "    Write-Host \"Administrator rights are required to install $app.\" -ForegroundColor red",
             "    exit 1",
             "}",
-            "$installer = \"$dir\\OpenHashTab_setup_user.exe\"",
+            "$installer = \"$dir\\OpenHashTab_setup_system.exe\"",
             "innounp -x $installer -d\"$dir\" -q",
             "if ([Environment]::Is64BitOperatingSystem) {",
             "    Move-Item \"$dir\\{app}\\OpenHashTab,1.dll\" -Destination \"$dir\\OpenHashTab.dll\"",
@@ -28,7 +28,7 @@
     "uninstaller": {
         "script": [
             "if (!(is_admin)) {",
-            "    error \"Administrator rights are required to install $app.\"",
+            "    Write-Host \"Administrator rights are required to install $app.\" -ForegroundColor red",
             "    exit 1",
             "}",
             "regsvr32 /u /s \"$dir\\OpenHashTab.dll\""
