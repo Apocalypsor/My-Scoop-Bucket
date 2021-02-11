@@ -52,7 +52,6 @@
         "Write-Output \"Stop Clash Service ...\"",
         "if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {",
         "Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command \"\"Stop-Process -Name clash-core-service -Force | Out-Null\"\"\";",
-        "exit;",
         "}}"
     ],
     "persist": [
