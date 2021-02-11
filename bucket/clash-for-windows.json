@@ -41,6 +41,14 @@
             "New-Item \"$dir\\data\" -Type Directory -Force | Out-Null"
         ]
     },
+    "uninstaller": {
+        "script": [
+            "$CLASH_SERVICE = Get-Process clash-core-service -ErrorAction SilentlyContinue",
+            "if ($CLASH_SERVICE) {",
+            "Write-Output \"Stop Clash Service ...\"",
+            "sudo Stop-Process -Name clash-core-service -Force | Out-Null}"
+        ]
+    },
     "pre_install": [
         "if (!(Test-Path \"$persist_dir\\profiles\")) {",
         "    New-Item \"$persist_dir\\profiles\" -Type Directory -Force | Out-Null",
@@ -51,7 +59,7 @@
         "$CLASH_SERVICE = Get-Process clash-core-service -ErrorAction SilentlyContinue",
         "if ($CLASH_SERVICE) {",
         "Write-Output \"Stop Clash Service ...\"",
-        "sudo Stop-Process -Name clash-core-service -Force | Out-Null}",
+        "sudo Stop-Process -Name clash-core-service -Force | Out-Null}"
     ],
     "persist": [
         [
