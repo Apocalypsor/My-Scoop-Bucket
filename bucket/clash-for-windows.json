@@ -33,6 +33,7 @@
             "Clash for Windows"
         ]
     ],
+    "depends": "sudo",
     "installer": {
         "script": [
             "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\"  | Out-Null",
@@ -50,9 +51,7 @@
         "$CLASH_SERVICE = Get-Process clash-core-service -ErrorAction SilentlyContinue",
         "if ($CLASH_SERVICE) {",
         "Write-Output \"Stop Clash Service ...\"",
-        "if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {",
-        "Start-Process PowerShell -Verb RunAs \"-NoProfile -ExecutionPolicy Bypass -Command \"\"Stop-Process -Name clash-core-service -Force | Out-Null\"\"\";",
-        "}}"
+        "sudo Stop-Process -Name clash-core-service -Force | Out-Null}",
     ],
     "persist": [
         [
