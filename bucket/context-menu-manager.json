@@ -2,9 +2,9 @@
     "homepage": "https://github.com/BluePointLilac/ContextMenuManager",
     "description": "一个纯粹的 Windows 右键菜单管理程序",
     "license": "MIT",
-    "version": "2.2.0.0",
-    "url": "https://github.com/BluePointLilac/ContextMenuManager/releases/download/2.2.0.0/ContextMenuManager.zip",
-    "hash": "765b2f51a22c0e212ff4fd78dabd943f5caec81f1f369a9b98ab779eb6d6ce61",
+    "version": "3.0.0.0",
+    "url": "https://github.com/BluePointLilac/ContextMenuManager/releases/download/3.0.0.0/ContextMenuManager.zip",
+    "hash": "9872c9b7876e51eb909e35097247edd85ba110c5cbd1847c8ca9cec58d9f9286",
     "shortcuts": [
         [
             "ContextMenuManager .NET 4.exe",
