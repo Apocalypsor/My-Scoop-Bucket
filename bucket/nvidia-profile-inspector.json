@@ -11,10 +11,6 @@
         "Expand-Archive -Path \"$dir\\NvidiaInspector.zip\" -DestinationPath \"$dir\"}"
     ],
     "persist": "NvidiaInspector.exe",
-    "bin": [
-        "nvidiaProfileInspector.exe",
-        "NvidiaInspector.exe"
-    ],
     "shortcuts": [
         [
             "nvidiaProfileInspector.exe",
