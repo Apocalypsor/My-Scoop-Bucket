@@ -1,10 +1,10 @@
 {
-    "version": "0.3.7",
+    "version": "0.3.8",
     "description": "🐶 Command-line DNS client for humans",
     "homepage": "https://github.com/mr-karan/doggo",
     "license": "GPL-3.0",
-    "url": "https://github.com/mr-karan/doggo/releases/download/v0.3.7/doggo_0.3.7_windows_amd64.tar.gz",
-    "hash": "6ab9d888eecb59287658dc1511bab2f1f414db1ae3720ba23024a9c40f32320a",
+    "url": "https://github.com/mr-karan/doggo/releases/download/v0.3.8/doggo_0.3.8_windows_amd64.tar.gz",
+    "hash": "6120913e7f9428b519f7e1ca8c8ca839ff7ae0ddaa0008844f3cadf52ff7bdd7",
     "bin": [
         [
             "doggo.exe",
