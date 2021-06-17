@@ -11,42 +11,48 @@ jobs:
     name: Fix Errors
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-      with:
-        token: ${{ secrets.REPO_TOKEN }}
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: '3.x'
-    - name: Install dependencies
-      run: pip install requests
-    - name: Fix hash errors
-      run: python ./bin/fix-hash.py
-    - name: Push
-      uses: stefanzweifel/git-auto-commit-action@v4
-      with:
-        commit_message: Fix errors
-        skip_dirty_check: false
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.REPO_TOKEN }}
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+      - name: Install dependencies
+        run: pip install requests
+      - name: Fix hash errors
+        run: python ./bin/fix-hash.py
+      - name: Push
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Fix errors
+          skip_dirty_check: false
+          commit_user_name: Action Bot
+          commit_user_email: 41898282+github-actions[bot]@users.noreply.github.com
+          commit_author: Action <actions@github.com>
 
   update-wintun:
     name: Update Wintun
     runs-on: ubuntu-latest 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-      with:
-        token: ${{ secrets.REPO_TOKEN }}
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: '3.x'
-    - name: Install dependencies
-      run: pip install requests
-    - name: Update
-      run: python ./bin/update-wintun.py
-    - name: Push
-      uses: stefanzweifel/git-auto-commit-action@v4
-      with:
-        commit_message: Update Wintun
-        skip_dirty_check: false
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.REPO_TOKEN }}
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+      - name: Install dependencies
+        run: pip install requests
+      - name: Update
+        run: python ./bin/update-wintun.py
+      - name: Push
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Update Wintun
+          skip_dirty_check: false
+          commit_user_name: Action Bot
+          commit_user_email: 41898282+github-actions[bot]@users.noreply.github.com
+          commit_author: Action <actions@github.com>
