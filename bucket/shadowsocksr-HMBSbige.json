@@ -1,15 +1,15 @@
 {
     "homepage": "https://github.com/HMBSbige/ShadowsocksR-Windows/",
     "license": "GPL-3.0",
-    "version": "5.3.0",
+    "version": "5.4.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/HMBSbige/ShadowsocksR-Windows/releases/download/5.3.0/ShadowsocksR-Win64-5.3.0.7z",
-            "hash": "16631064dab8f0b8d55d75d47c4fe9fa0c13deae99376ce62aa5455eff794cc2"
+            "url": "https://github.com/HMBSbige/ShadowsocksR-Windows/releases/download/5.4.0/ShadowsocksR-Win64-5.4.0.7z",
+            "hash": "8010020006ca5f1639ba0349e1eeb73317d7ca1bae944cc2397ff59eb8c12e06"
         },
         "32bit": {
-            "url": "https://github.com/HMBSbige/ShadowsocksR-Windows/releases/download/5.3.0/ShadowsocksR-Win32-5.3.0.7z",
-            "hash": "1c907652ebfa9aa38861e82da4aaba0f67d103f6e219101ef32cfc9d9c681bc1"
+            "url": "https://github.com/HMBSbige/ShadowsocksR-Windows/releases/download/5.4.0/ShadowsocksR-Win32-5.4.0.7z",
+            "hash": "99d4a8c6aa997ac3fb975298a827b890d71c3aa72b0d63c8602d64fb32f19992"
         }
     },
     "pre_install": [
