@@ -6,11 +6,11 @@
     "architecture": {
         "64bit": {
             "url": "https://github.com/Fndroid/clash_for_windows_pkg/releases/download/0.18.10/Clash.for.Windows.Setup.0.18.10.exe#/dl.7z",
-            "hash": "21ac8e540c0cec89fb932457beca26ca793edc546dbb8a7693f1a2f76b3f15d4"
+            "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
         },
         "32bit": {
             "url": "https://github.com/Fndroid/clash_for_windows_pkg/releases/download/0.18.10/Clash.for.Windows.Setup.0.18.10.ia32.exe#/dl.7z",
-            "hash": "951497f57e468bc06cb4c34e47723f2cefc76e032858ff6fa404104815fad9c0"
+            "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
         }
     },
     "shortcuts": [
