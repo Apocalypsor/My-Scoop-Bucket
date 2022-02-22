@@ -1,6 +1,7 @@
 name: Update Bucket
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: "0 * * * *"
 
