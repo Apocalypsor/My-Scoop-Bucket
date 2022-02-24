@@ -6,7 +6,7 @@
     "architecture": {
         "64bit": {
             "url": "https://github.com/Fndroid/clash_for_windows_pkg/releases/download/0.19.8/Clash.for.Windows.Setup.0.19.8.exe#/dl.7z",
-            "hash": "e327ac9b72226b3b450f5e5763184e1ada3c5aa5d812de65222bbdd2c032ef5f"
+            "hash": "8aa15dccebd65e66e274250efa85b859332251cfee153c41828a767a740e2fb2"
         },
         "32bit": {
             "url": "https://github.com/Fndroid/clash_for_windows_pkg/releases/download/0.19.8/Clash.for.Windows.Setup.0.19.8.ia32.exe#/dl.7z",
