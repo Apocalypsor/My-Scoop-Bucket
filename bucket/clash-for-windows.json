@@ -10,7 +10,7 @@
         },
         "32bit": {
             "url": "https://github.com/Fndroid/clash_for_windows_pkg/releases/download/0.19.12/Clash.for.Windows.Setup.0.19.12.ia32.exe#/dl.7z",
-            "hash": "d9899f7518f6ad24023f40a034ab0fb20ae5244e1d74000c3b66eade2ef87c84"
+            "hash": "d8ec2c5f5943fe456eea4d84303bb84c658687d5d1f45af0bfe9e380da77c5a6"
         }
     },
     "shortcuts": [
