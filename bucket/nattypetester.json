@@ -1,9 +1,9 @@
 {
     "homepage": "https://github.com/HMBSbige/NatTypeTester",
-    "version": "6.1.0",
+    "version": "6.2.0",
     "license": "MIT",
-    "url": "https://github.com/HMBSbige/NatTypeTester/releases/download/6.1.0/NatTypeTester-generic-6.1.0.7z",
-    "hash": "939686eb4b32b4c171fba3d75c50a023253176d45070157adef2a4ee956a820d",
+    "url": "https://github.com/HMBSbige/NatTypeTester/releases/download/6.2.0/NatTypeTester-6.2.0.7z",
+    "hash": "7BD1E7ED40EA7E6E194C23B6F5249498A6745D9DCAB6285BA060050DC592BED0",
     "shortcuts": [
         [
             "NatTypeTester/NatTypeTester.exe",
